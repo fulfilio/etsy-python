@@ -1,5 +1,5 @@
-from _v2 import EtsyV2 as Etsy  # noqa
-from etsy_env import EtsyEnvProduction  # noqa
+from ._v2 import EtsyV2 as Etsy  # noqa
+from .etsy_env import EtsyEnvProduction  # noqa
 
 
 __version__ = '0.4.10'

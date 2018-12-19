@@ -17,7 +17,7 @@ class EtsyOAuthClient(OAuth1Session):
 
     def set_oauth_verifier(self, oauth_verifier):
         token = self.fetch_access_token(
-            self.access_token_url, verifier=unicode(oauth_verifier))
+            self.access_token_url, verifier=str(oauth_verifier))
         self.resource_owner_key = token['oauth_token']
         self.resource_owner_secret = token['oauth_token_secret']
 

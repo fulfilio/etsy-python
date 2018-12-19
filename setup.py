@@ -26,6 +26,7 @@ setup(
     license='GPL v3',
     keywords='etsy api handmade',
     packages=['etsy'],
+    python_requires=">=3.5",
     long_description=long_description,
     test_suite='test',
     install_requires=requirements,
