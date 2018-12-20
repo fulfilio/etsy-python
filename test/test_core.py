@@ -1,9 +1,9 @@
-from __future__ import with_statement
+
 from etsy._core import API, MethodTableCache, missing
 from cgi import parse_qs
-from urlparse import urlparse
+from urllib.parse import urlparse
 import os
-from util import Test
+from .util import Test
 import tempfile
 from etsy.oauth import EtsyOAuthClient
 
@@ -76,10 +76,10 @@ class CoreTests(Test):
 
     def test_results_returned(self):
         x = self.api.testMethod(test_id='foo')
-        self.assertEquals(x, [3])
+        self.assertEqual(x, [3])
 
     def test_docstring_set(self):
-        self.assertEquals(self.api.testMethod.__doc__,
+        self.assertEqual(self.api.testMethod.__doc__,
                           'test method.')
 
     def test_api_url_required(self):

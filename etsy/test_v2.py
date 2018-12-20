@@ -17,8 +17,8 @@ def my_log(msg):
 
 
 def write_config_file(oauth_token):
-    os.umask(0077)  # noqa
-    config_file = file('config.py', 'w')
+    os.umask(0o077)  # noqa
+    config_file = open('config.py', 'w')
 
     if config:
         config_file.write("oauth_consumer_key = %r\n" %
@@ -56,7 +56,7 @@ if (hasattr(config, 'oauth_token_key') and
         secret=config.oauth_token_secret)
 else:
     webbrowser.open(oauth_client.get_signin_url())
-    oauth_client.set_oauth_verifier(raw_input('Enter OAuth verifier: '))
+    oauth_client.set_oauth_verifier(input('Enter OAuth verifier: '))
     write_config_file(oauth_client.token)
 
 etsy_api = Etsy(etsy_oauth_client=oauth_client, etsy_env=etsy_env, log=my_log)
@@ -74,7 +74,7 @@ print('findAllUserShippingTemplates => %r' %
 
 
 def testCreateListing():
-    print "Creating listing..."
+    print("Creating listing...")
 
     result = etsy_api.createListing(
         description=config.description,
@@ -88,12 +88,12 @@ def testCreateListing():
 
     listing_id = result[0]['listing_id']
 
-    print "Created listing with listing id %d" % listing_id
+    print("Created listing with listing id %d" % listing_id)
 
     result = etsy_api.uploadListingImage(listing_id=listing_id,
                                          image=config.image_file)
 
-    print "Result of uploading image: %r" % result
+    print("Result of uploading image: %r" % result)
 
 
 testCreateListing()
