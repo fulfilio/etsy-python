@@ -3,8 +3,10 @@ from requests_oauthlib import OAuth1Session
 
 
 class EtsyOAuthClient(OAuth1Session):
-    def __init__(self, oauth_consumer_key,
-                 oauth_consumer_secret, etsy_env=EtsyEnvProduction(), **kwargs):
+    def __init__(
+        self, oauth_consumer_key, oauth_consumer_secret,
+        etsy_env=EtsyEnvProduction(), **kwargs
+    ):
         super(EtsyOAuthClient, self).__init__(
             oauth_consumer_key, oauth_consumer_secret, **kwargs)
         self.request_token_url = etsy_env.request_token_url

@@ -1,5 +1,7 @@
 import oauth2 as oauth
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
+import urllib.parse
+import urllib.error
 from cgi import parse_qsl
 from .etsy_env import EtsyEnvProduction
 
