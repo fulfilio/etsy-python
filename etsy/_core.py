@@ -1,7 +1,9 @@
 
 from contextlib import closing
 import simplejson as json
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 from urllib.parse import urlencode
 import os
 import re
@@ -306,6 +308,9 @@ class API(object):
             url = '%s%s' % (self.api_url, url)
             body = urlencode(kwargs)
             content_type = 'application/x-www-form-urlencoded'
+
+        if isinstance(body, str):
+            body = body.encode('utf-8')
 
         self.last_url = url
         data = self._get_url(url, http_method, content_type, body)

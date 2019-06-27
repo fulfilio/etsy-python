@@ -1,4 +1,6 @@
-import urllib.request, urllib.parse, urllib.error  # noqa
+import urllib.request
+import urllib.parse
+import urllib.error  # noqa
 from ._core import API, missing
 from .etsy_env import EtsyEnvProduction
 
