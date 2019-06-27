@@ -19,7 +19,7 @@ test_requirements = [
 
 setup(
     name='pyetsy',
-    version='0.5.0',
+    version='0.5.1',
     author='Dan McKinley & Fulfil.IO Inc.',
     author_email='dan@etsy.com,support@fulfil.io',
     description='Python access to the Etsy API',
