@@ -79,8 +79,9 @@ class CoreTests(Test):
         self.assertEqual(x, [3])
 
     def test_docstring_set(self):
-        self.assertEqual(self.api.testMethod.__doc__,
-                          'test method.')
+        self.assertEqual(
+            self.api.testMethod.__doc__, 'test method.'
+        )
 
     def test_api_url_required(self):
         msg = self.assertRaises(AssertionError, API, '')
